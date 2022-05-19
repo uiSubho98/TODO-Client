@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Home = () => {
     const [tasks , setTasks]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/task')
+        fetch('https://ancient-brook-05251.herokuapp.com//task')
         .then(res=>res.json())
         .then(data=>setTasks(data))
     },[tasks])
@@ -13,7 +13,7 @@ const Home = () => {
         const name= event.target.name.value;
         const description= event.target.description.value;
         const newTask ={name,description}
-        fetch('http://localhost:5000/task',{
+        fetch('https://ancient-brook-05251.herokuapp.com//task',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
